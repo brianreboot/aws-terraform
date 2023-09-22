@@ -12,8 +12,3 @@ variable "t3_xlarge" {
   description = "Type of EC2 instance to provision"
   default     = "t3.xlarge"
 }
-
-variable "osaka" {
-  description = "Deploy in the Osaka Region"
-  default     = "ap-northeast-3"
-}
