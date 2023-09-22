@@ -1,3 +1,8 @@
+// Name of VPC tags for this project 
+variable "project_tags" {
+  default = "terraform"
+}
+
 // Create VPC
 resource "aws_vpc" "terraform-vpc" {
     assign_generated_ipv6_cidr_block     = false
@@ -7,10 +12,10 @@ resource "aws_vpc" "terraform-vpc" {
     enable_network_address_usage_metrics = false
     instance_tenancy                     = "default"
     tags                                 = {
-        "Name" = "${var.project_tags}-vpc"
+        "Name"                           = "${var.project_tags}-vpc"
     }
     tags_all                             = {
-        "Name" = "${var.project_tags}-vpc"
+        "Name"                           = "${var.project_tags}-vpc"
     }
 }
 
@@ -19,7 +24,7 @@ resource "aws_subnet" "terraform-subnet" {
   vpc_id               = aws_vpc.terraform-vpc.id
   cidr_block           = "10.0.0.0/24"
 
-  tags = {
+  tags   = {
     Name = "${var.project_tags}-subnet"
   }
 }
@@ -28,7 +33,7 @@ resource "aws_subnet" "terraform-subnet" {
 resource "aws_internet_gateway" "terraform-gw" {
   vpc_id = aws_vpc.terraform-vpc.id
 
-  tags = {
+  tags   = {
     Name = "${var.project_tags}-gw"
   }
 }
@@ -42,7 +47,7 @@ resource "aws_route_table" "terraform-rtb" {
     gateway_id = aws_internet_gateway.terraform-gw.id
   }
 
-  tags = {
+  tags   = {
     Name = "${var.project_tags}-rtb"
   }
 }
