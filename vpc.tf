@@ -1,8 +1,3 @@
-// Name of tags for this project 
-variable "project_tags" {
-  default     = "terraform"
-}
-
 // Create VPC
 resource "aws_vpc" "terraform-vpc" {
     assign_generated_ipv6_cidr_block     = false
