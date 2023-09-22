@@ -6,9 +6,9 @@ resource "aws_instance" "ec2" {
     security_groups                      = []
     subnet_id                            = aws_subnet.terraform-subnet.id
     tags                                 = {
-        "Name" = "{var.project_tags}-ec2"
+        "Name" = "${var.project_tags}-ec2"
     }
     tags_all                             = {
-        "Name" = "{var.project_tags}-ec2"
+        "Name" = "${var.project_tags}-ec2"
     }
 }

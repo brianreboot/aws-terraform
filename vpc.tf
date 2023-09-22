@@ -7,10 +7,10 @@ resource "aws_vpc" "terraform-vpc" {
     enable_network_address_usage_metrics = false
     instance_tenancy                     = "default"
     tags                                 = {
-        "Name" = "{var.project_tags}-vpc"
+        "Name" = "${var.project_tags}-vpc"
     }
     tags_all                             = {
-        "Name" = "{var.project_tags}-vpc"
+        "Name" = "${var.project_tags}-vpc"
     }
 }
 
@@ -20,7 +20,7 @@ resource "aws_subnet" "terraform-subnet" {
   cidr_block           = "10.0.0.0/24"
 
   tags = {
-    Name = "{var.project_tags}-subnet"
+    Name = "${var.project_tags}-subnet"
   }
 }
 
@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "terraform-gw" {
   vpc_id = aws_vpc.terraform-vpc.id
 
   tags = {
-    Name = "{var.project_tags}-gw"
+    Name = "${var.project_tags}-gw"
   }
 }
 
@@ -43,7 +43,7 @@ resource "aws_route_table" "terraform-rtb" {
   }
 
   tags = {
-    Name = "{var.project_tags}-rtb"
+    Name = "${var.project_tags}-rtb"
   }
 }
 
