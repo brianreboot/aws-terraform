@@ -1,4 +1,4 @@
 variable "project_tags" {
-  description = "Deploy in the Osaka Region"
-  default     = "terraform"
+  description = "Deploy to Osaka"
+  default     = "ap-northeast-3"
 }
