@@ -1,4 +1,4 @@
-variable "project_tags" {
+variable "osaka" {
   description = "Deploy to Osaka"
   default     = "ap-northeast-3"
 }
