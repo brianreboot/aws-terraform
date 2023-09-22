@@ -8,5 +8,5 @@ terraform {
 }
 
 provider "aws" {
-  region     = var.osaka
+  region     = var.tokyo
 }
