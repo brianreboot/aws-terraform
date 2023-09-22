@@ -1,4 +1,5 @@
 resource "aws_instance" "ec2" {
+    count                                = 2
     ami                                  = data.aws_ami.windows2022.id
     instance_type                        = var.t3_nano
     associate_public_ip_address          = true
