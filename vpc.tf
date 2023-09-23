@@ -3,10 +3,21 @@ variable "project_tags" {
   default = "terraform"
 }
 
+// VPC CIDR for this project 
+variable "vpc-cidr" {
+  default = "10.0.0.0/16"
+}
+
+// Subnet CIDR for this VPC 
+variable "subnet-cidr" {
+  default = "10.0.0.0/24"
+}
+
+
 // Create VPC
 resource "aws_vpc" "terraform-vpc" {
     assign_generated_ipv6_cidr_block     = false
-    cidr_block                           = "10.0.0.0/16"
+    cidr_block                           = var.vpc-cidr
     enable_dns_hostnames                 = true
     enable_dns_support                   = true
     enable_network_address_usage_metrics = false
@@ -23,7 +34,7 @@ resource "aws_vpc" "terraform-vpc" {
 // Create VPC Subnet
 resource "aws_subnet" "terraform-subnet" {
   vpc_id               = aws_vpc.terraform-vpc.id
-  cidr_block           = "10.0.0.0/24"
+  cidr_block           = var.subnet-cidr
 
   tags   = {
     Name = "${var.project_tags}-subnet"
