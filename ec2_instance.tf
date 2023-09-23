@@ -1,6 +1,6 @@
 // Name of Instances for this project 
 variable "instance_tags" {
-  default = "instance1"
+  default = "instance"
 }
 
 resource "aws_instance" "ec2" {
@@ -12,11 +12,11 @@ resource "aws_instance" "ec2" {
     subnet_id                   = aws_subnet.terraform-subnet.id
     
     tags       = {
-        "Name" = "${var.instance_tags}-ec2"
+        "Name" = var.instance_tags
     }
     
     tags_all   = {
-        "Name" = "${var.instance_tags}-ec2"
+        "Name" = var.instance_tags
     }
 
 }
