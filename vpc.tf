@@ -11,11 +11,12 @@ resource "aws_vpc" "terraform-vpc" {
     enable_dns_support                   = true
     enable_network_address_usage_metrics = false
     instance_tenancy                     = "default"
-    tags                                 = {
-        "Name"                           = "${var.project_tags}-vpc"
+    
+    tags       = {
+        "Name" = "${var.project_tags}-vpc"
     }
-    tags_all                             = {
-        "Name"                           = "${var.project_tags}-vpc"
+    tags_all   = {
+        "Name" = "${var.project_tags}-vpc"
     }
 }
 
