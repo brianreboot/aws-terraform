@@ -1,27 +1,17 @@
-// Instance Type
-variable "ec2_instance" {
-  default = "t3.nano"
-}
-
-// Instance Name 
-variable "instance_tags" {
-  default = "instance1"
-}
-
-resource "aws_instance" "ec2" {
+resource "aws_instance" "instance1" {
     count                       = 1
     ami                         = data.aws_ami.windows2022.id
-    instance_type               = var.ec2_instance
+    instance_type               = "t3.nano"
     associate_public_ip_address = true
     security_groups             = []
     subnet_id                   = aws_subnet.terraform-subnet.id
     
     tags       = {
-        "Name" = var.instance_tags
+        "Name" = "instance1"
     }
     
     tags_all   = {
-        "Name" = var.instance_tags
+        "Name" = "instance1"
     }
 
 }
