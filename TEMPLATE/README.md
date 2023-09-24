@@ -1,0 +1,1 @@
+This template will create a one VPC and one instance. Copy and rename this folder to create a new VPC.
