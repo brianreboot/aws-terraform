@@ -18,6 +18,8 @@ variable "vpc_az" {
   default = "ap-northeast-1a"
 }
 
+// ------------------------------------------------------------ //
+
 // Create VPC
  resource "aws_vpc" "terraform-vpc" {
      assign_generated_ipv6_cidr_block     = false
