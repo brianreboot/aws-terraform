@@ -1,7 +1,7 @@
 resource "aws_instance" "ec2" {
     count                       = 1
     ami                         = data.aws_ami.windows2022.id
-    instance_type               = var.t3_nano
+    instance_type               = var.ec2_instance
     associate_public_ip_address = true
     security_groups             = []
     subnet_id                   = aws_subnet.terraform-subnet.id

@@ -12,13 +12,3 @@ variable "vpc-cidr" {
 variable "subnet-cidr" {
   default = "10.10.0.0/24"
 }
-
-///////////////////////////////
-
-
-// Name of Instances for this project 
-variable "instance_tags" {
-  default = "instance1"
-}
-
-///////////////////////////////
