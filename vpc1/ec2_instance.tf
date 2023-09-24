@@ -1,8 +1,3 @@
-// Name of Instances for this project 
-variable "instance_tags" {
-  default = "instance"
-}
-
 resource "aws_instance" "ec2" {
     count                       = 1
     ami                         = data.aws_ami.windows2022.id
