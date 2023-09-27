@@ -1,7 +1,12 @@
-module "ec2_instance1" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
+#######################################
+# THIS MODULE WILL CREATE 3 INSTANCES #
+#######################################
 
-  name = "instance 1"
+module "ec2_instance" {
+  source  = "terraform-aws-modules/ec2-instance/aws"
+  
+  for_each = toset(["one", "two", "three"])
+  name     = "instance-${each.key}"
 
   ami                         = data.aws_ami.windows2022.id
   instance_type               = "t2.micro"
