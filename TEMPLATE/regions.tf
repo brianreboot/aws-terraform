@@ -1,9 +1,14 @@
-variable "osaka" {
-  description = "Deploy to Osaka"
-  default     = "ap-northeast-3"
-}
+########################################
+# UNCOMMENT THE REGION YOU WANT TO USE #
+########################################
 
-variable "tokyo" {
+# variable "aws_region" {
+#   description = "Deploy to Osaka"
+#   default     = "ap-northeast-3"
+# }
+
+variable "aws_region" {
   description = "Deploy to Tokyo"
   default     = "ap-northeast-1"
 }
+
