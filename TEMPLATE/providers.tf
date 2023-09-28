@@ -9,5 +9,5 @@ terraform {
 
 provider "aws" {
   region  = var.aws_region
-  profile = var.coe-aws
+  profile = var.aws_profile
 }

@@ -25,7 +25,7 @@ resource "aws_default_network_acl" "default" {
         icmp_code  = 0
         icmp_type  = 0
         protocol   = "-1"
-    }
+        }
 
     ingress {
         rule_no    = 101
@@ -36,8 +36,8 @@ resource "aws_default_network_acl" "default" {
         icmp_code  = 0
         icmp_type  = 0
         protocol   = "-1"
-    }  
-
+        }
+        
     egress {
         rule_no    = 100
         action     = "allow"
