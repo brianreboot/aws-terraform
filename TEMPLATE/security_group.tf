@@ -60,14 +60,14 @@ resource "aws_default_security_group" "default" {
   ]
 
   tags = {
-    "Environment" = "dev"
-    "Terraform"   = "true"
-    "Name"        = "terraform-default"
+    "Environment" = var.tag_environment
+    "Terraform"   = var.tag_terraform
+    "Name"        = var.tag_vpc_name
   }
   
   tags_all = {
-    "Environment" = "dev"
-    "Terraform"   = "true"
-    "Name"        = "terraform-default"
+    "Environment" = var.tag_environment
+    "Terraform"   = var.tag_terraform
+    "Name"        = var.tag_vpc_name
   }
 }

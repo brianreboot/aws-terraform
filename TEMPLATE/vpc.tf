@@ -1,7 +1,7 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "terraform"
+  name = var.tag_vpc_name
   cidr = "10.0.0.0/16"
 
   azs             = ["ap-northeast-1a", "ap-northeast-1c", "ap-northeast-1d"]
@@ -15,7 +15,7 @@ module "vpc" {
   manage_default_network_acl    = false
 
   tags = {
-    Terraform   = "true"
-    Environment = "dev"
+    Terraform   = var.tag_terraform
+    Environment = var.tag_environment
   }
 }

@@ -6,14 +6,14 @@ resource "aws_default_network_acl" "default" {
     default_network_acl_id = module.vpc.default_network_acl_id
 
     tags                   = {
-        "Environment" = "dev"
-        "Name"        = "terraform-default"
-        "Terraform"   = "true"
+        "Environment" = var.tag_environment
+        "Terraform"   = var.tag_terraform
+        "Name"        = var.tag_vpc_name
     }
     tags_all               = {
-        "Environment" = "dev"
-        "Name"        = "terraform-default"
-        "Terraform"   = "true"
+        "Environment" = var.tag_environment
+        "Terraform"   = var.tag_terraform
+        "Name"        = var.tag_vpc_name
     }
 
     ingress {
