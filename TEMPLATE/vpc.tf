@@ -11,7 +11,8 @@ module "vpc" {
   enable_nat_gateway            = false
   enable_vpn_gateway            = false
   map_public_ip_on_launch       = true
-  manage_default_security_group = true
+  manage_default_security_group = false
+  manage_default_network_acl    = false
 
   tags = {
     Terraform   = "true"
