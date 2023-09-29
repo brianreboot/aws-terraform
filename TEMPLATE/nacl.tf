@@ -27,32 +27,10 @@ resource "aws_default_network_acl" "default" {
         protocol   = "-1"
         }
 
-    ingress {
-        rule_no    = 101
-        action     = "deny"
-        ipv6_cidr_block = "::/0"
-        from_port  = 0
-        to_port    = 0
-        icmp_code  = 0
-        icmp_type  = 0
-        protocol   = "-1"
-        }
-        
     egress {
         rule_no    = 100
         action     = "allow"
         cidr_block = "0.0.0.0/0"
-        from_port  = 0
-        to_port    = 0
-        icmp_code  = 0
-        icmp_type  = 0
-        protocol   = "-1"
-    }
-
-     egress {
-        rule_no    = 101
-        action     = "deny"
-        ipv6_cidr_block = "::/0"
         from_port  = 0
         to_port    = 0
         icmp_code  = 0

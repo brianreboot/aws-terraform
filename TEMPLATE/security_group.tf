@@ -15,27 +15,14 @@ resource "aws_default_security_group" "default" {
       security_groups  = []
       self             = true
     },
-    
     {
-      cidr_blocks      = ["0.0.0.0/0"]
-      description      = "ICMP"
-      from_port        = -1
-      to_port          = -1
+      cidr_blocks      = []
+      description      = "Vizrt Whitelist"
+      from_port        = 0
+      to_port          = 0
       ipv6_cidr_blocks = []
-      prefix_list_ids  = []
-      protocol         = "icmp"
-      security_groups  = []
-      self             = false
-    },
-
-    {
-      cidr_blocks      = ["0.0.0.0/0"]
-      description      = "RDP"
-      from_port        = 3389
-      to_port          = 3389
-      ipv6_cidr_blocks = []
-      prefix_list_ids  = []
-      protocol         = "tcp"
+      prefix_list_ids  = ["REPLACE THIS WITH REAL PREFIX ID",]
+      protocol         = "-1"
       security_groups  = []
       self             = false
     },
@@ -44,16 +31,15 @@ resource "aws_default_security_group" "default" {
   egress = [
     {
       cidr_blocks      = ["0.0.0.0/0"]
-        description      = ""
-        from_port        = 0
-        to_port          = 0
-        ipv6_cidr_blocks = []
-        prefix_list_ids  = []
-        protocol         = "-1"
-        security_groups  = []
-        self             = false
-        
-        },
+      description      = ""
+      from_port        = 0
+      to_port          = 0
+      ipv6_cidr_blocks = []
+      prefix_list_ids  = []
+      protocol         = "-1"
+      security_groups  = []
+      self             = false
+    },
   ]
 
   tags = {

@@ -1,6 +1,18 @@
+##### VARIABLES #####
+variable "instance_count" {
+  description = "how many instances are required?"
+  default     = "1"
+}
+
+variable "tag_instance_name" {
+  description = "name of the ec2 instance"
+  default     = "ec2-instance"
+}
+##### VARIABLES #####
+
 resource "aws_instance" "instance1" {
     count                       = var.instance_count
-    ami                         = data.aws_ami.windows2022.id
+    ami                         = "REPLACE THIS WITH THE REAL AMI"
     instance_type               = "t3.nano"
     associate_public_ip_address = true
     security_groups             = []
