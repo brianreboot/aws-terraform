@@ -17,7 +17,7 @@ resource "aws_default_security_group" "default" {
     },
     {
       cidr_blocks      = []
-      description      = "Vizrt Whitelist"
+      description      = "Whitelist"
       from_port        = 0
       to_port          = 0
       ipv6_cidr_blocks = []
